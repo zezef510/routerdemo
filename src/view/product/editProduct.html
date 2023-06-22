@@ -5,16 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<form action="http://localhost:8080/product" method="post">
-    <label>ID sản phẩm :</label>
-    <input type="number" name="id">
-    <label>Tên sản phẩm:</label>
-    <input type="text" name="nameProduct">
-    <label>Giá sản phẩm:</label>
-    <input type="number" step="0.1" name="price">
-    <label>Số lượng sản phẩm:</label>
-    <input type="number"  name="quantity">
-    <button>Sua sản phẩm</button>
+<!--<form action="http://localhost:8080/product" method="post">-->
+<!--    <label>ID sản phẩm :</label>-->
+<!--    <input type="number" name="id">-->
+<!--    <label>Tên sản phẩm:</label>-->
+<!--    <input type="text" name="nameProduct">-->
+<!--    <label>Giá sản phẩm:</label>-->
+<!--    <input type="number" step="0.1" name="price">-->
+<!--    <label>Số lượng sản phẩm:</label>-->
+<!--    <input type="number"  name="quantity">-->
+<!--    <button>Sua sản phẩm</button>-->
+<!--</form>-->
+<form method='POST' action='/product'>
+    <input type="hidden" name="id" value="{productId}">
+    Name: <input type="text" name="nameProduct" value="{productName}"><br>
+    Price: <input type="text" name="price" value="{productPrice}"><br>
+    Quantity: <input type="text" name="quantity" value="{productQuantity}"><br>
+    <button type="submit">Save</button>
 </form>
 </body>
 </html>

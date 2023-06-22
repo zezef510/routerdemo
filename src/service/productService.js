@@ -21,13 +21,33 @@ export class ProductService{
         }
     }
 
-        edit(id  ,product){
-            for (let i = 0; i < this.listProduct.length; i++) {
-                if ( this.listProduct[i].id === id ){
-                    this.listProduct[i] = product
-                }
+    edit(product) {
+        for (let i = 0; i < this.listProduct.length; i++) {
+            if (this.listProduct[i].id == product.id) {
+                this.listProduct[i] = product;
+            }
+        }
+    }
+    getProductById(idEdit) {
+        for (const product  of this.listProduct){
+            if (product.id == idEdit ){
+                return product
             }
         }
 
+    }
+    save(products){
+        let checkExist = false
+        for (let i = 0; i < this.listProduct.length; i++) {
+            if (this.listProduct[i].id == products.id) {
+                this.listProduct[i] = products;
+
+            }
+        }
+        if(!checkExist){
+            this.listProduct.push(products)
+        }
+
+    }
 
 }
